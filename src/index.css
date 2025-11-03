@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Industrial Color Palette - Steel & Orange Theme */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 25%;
+
+    /* Primary: Dark Steel Grey */
+    --primary: 215 25% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary: Light Grey */
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 215 25% 25%;
+
+    --muted: 210 15% 92%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Accent: Industrial Orange */
+    --accent: 25 95% 53%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 25 95% 53%;
+
+    /* Industrial Design Tokens */
+    --steel-dark: 215 25% 25%;
+    --steel-medium: 215 20% 35%;
+    --steel-light: 210 15% 92%;
+    --steel-lighter: 210 10% 96%;
+    --orange-primary: 25 95% 53%;
+    --orange-hover: 25 95% 48%;
+    --orange-light: 25 95% 95%;
+    
+    /* Advanced Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 25% 25%) 0%, hsl(215 20% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 48%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 10% 96%) 100%);
+    --gradient-industrial: linear-gradient(135deg, hsl(215 25% 25%) 0%, hsl(25 95% 53%) 100%);
+    
+    /* Professional Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(215 25% 25% / 0.1);
+    --shadow-medium: 0 4px 16px -4px hsl(215 25% 25% / 0.15);
+    --shadow-strong: 0 8px 32px -8px hsl(215 25% 25% / 0.2);
+    --shadow-orange: 0 4px 20px -4px hsl(25 95% 53% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 25% 12%;
+    --foreground: 210 15% 92%;
+
+    --card: 215 20% 18%;
+    --card-foreground: 210 15% 92%;
+
+    --popover: 215 20% 18%;
+    --popover-foreground: 210 15% 92%;
+
+    --primary: 210 15% 92%;
+    --primary-foreground: 215 25% 25%;
+
+    --secondary: 215 20% 22%;
+    --secondary-foreground: 210 15% 92%;
+
+    --muted: 215 20% 22%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 215 25% 25%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 15% 92%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 25 95% 53%;
+
+    /* Dark Mode Industrial Tokens */
+    --steel-dark: 210 15% 92%;
+    --steel-medium: 210 15% 75%;
+    --steel-light: 215 20% 22%;
+    --steel-lighter: 215 20% 18%;
+    --orange-primary: 25 95% 53%;
+    --orange-hover: 25 95% 58%;
+    --orange-light: 25 95% 15%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-4xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl font-semibold tracking-tight;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-xl lg:text-2xl font-medium;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Industrial Button Variants */
+  .btn-industrial {
+    @apply bg-accent text-white font-semibold px-6 py-3 rounded-lg shadow-medium hover:shadow-orange transform hover:-translate-y-0.5 transition-all duration-300;
+  }
+  
+  .btn-industrial-outline {
+    @apply border-2 border-accent text-accent bg-transparent font-semibold px-6 py-3 rounded-lg hover:bg-accent hover:text-white transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .card-industrial {
+    @apply bg-white border border-border rounded-xl shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+
+  /* Shadow utilities */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .shadow-orange {
+    box-shadow: var(--shadow-orange);
+  }
+}
