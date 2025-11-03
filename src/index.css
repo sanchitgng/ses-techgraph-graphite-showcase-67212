@@ -158,6 +158,11 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
   }
+
+  /* Hide Lovable badge */
+  #lovable-badge {
+    display: none !important;
+  }
 }
 
 @layer components {
