@@ -19,4 +19,5 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: '/ses-techgraph-graphite-showcase-67212/' // ⚠️ Replace with YOUR repo name
 }));
